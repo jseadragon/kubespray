@@ -16,6 +16,7 @@
     - "{{ kube_cert_dir }}/sa.key"
     - "{{ kube_cert_dir }}/sa.pub"
   register: kubeadm_certs
+  no_log: true
   delegate_to: "{{ groups['kube-master']|first }}"
 
 - name: kubeadm | write out kubeadm certs
